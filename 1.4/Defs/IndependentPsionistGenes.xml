@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <GeneDef>
+        <defName>SHG_Archetypes_Psionist</defName>
+        <label>psionist</label>
+        <description>Psionists have an innate connection to the psychic fields many royals use. This connection allows them to manipulate psychic energy far better than any human should be able to. This will give them an innate psylink to utilize their power.\n\nIf this gene is lost at any point, the psylink will go with it, though the abilities will remain. All psionic paths require this gene, and multiple paths can be used at the same time.\n\nThis can have weird interactions with VPE. Most things will work, but because this gene and the Psionic Soldier increase psychic sensitivity, this can end up having strange effects. For example, someone on the Discord server was able to confirm that the Frost Ray ability was channeling for so long that it was starving the Psionist. If you choose to use them together, please be careful with what VPE abilties you use.</description>
+        <iconPath>Psionist/Gene_Psionist</iconPath>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <biostatArc>1</biostatArc>
+        <displayOrderInCategory>-1</displayOrderInCategory>
+        <displayCategory>Archite</displayCategory>
+        <biostatCpx>1</biostatCpx>
+        <suppressedTraits>
+            <li>
+                <def>PsychicSensitivity</def>
+                <degree>-1</degree>
+            </li>
+            <li>
+                <def>PsychicSensitivity</def>
+                <degree>-2</degree>
+            </li>
+        </suppressedTraits>
+        <statOffsets>
+            <PsychicSensitivity>1</PsychicSensitivity>
+            <PsychicEntropyMax>100.0</PsychicEntropyMax>
+            <PsychicEntropyRecoveryRate>1.0</PsychicEntropyRecoveryRate>
+            <MeditationFocusGain>1.0</MeditationFocusGain>
+        </statOffsets>
+        <exclusionTags>
+            <li>PsychicAbility</li>
+        </exclusionTags>
+		<modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>PsychicAmplifier</hediff>
+                        <bodyParts>
+							<li>Brain</li>
+						</bodyParts>
+                        <severity>1</severity>
+                    </li>
+                </hediffsToApply>
+			</li>
+		</modExtensions>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>psion</symbol></li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li><symbol>psion</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
+    </GeneDef>
+
+    <GeneCategoryDef>
+        <defName>SuperPowersPsychicDimensional</defName>
+        <label>psionist powers - dimensional</label>
+        <displayPriorityInXenotype>989.9</displayPriorityInXenotype>
+    </GeneCategoryDef>
+
+    <GeneCategoryDef>
+        <defName>SuperPowersPsychicCommander</defName>
+        <label>psionist powers - commander</label>
+        <displayPriorityInXenotype>989.8</displayPriorityInXenotype>
+    </GeneCategoryDef>
+
+    <GeneCategoryDef>
+        <defName>SuperPowersPsychicGuardian</defName>
+        <label>psionist powers - guardian</label>
+        <displayPriorityInXenotype>989.7</displayPriorityInXenotype>
+    </GeneCategoryDef>
+
+    <GeneCategoryDef>
+        <defName>SuperPowersPsychicTyrant</defName>
+        <label>psionist powers - tyrant</label>
+        <displayPriorityInXenotype>989.6</displayPriorityInXenotype>
+    </GeneCategoryDef>
+
+    <GeneCategoryDef>
+        <defName>SuperPowersPsychicSoldier</defName>
+        <label>psionist powers - soldier</label>
+        <displayPriorityInXenotype>989.5</displayPriorityInXenotype>
+    </GeneCategoryDef>
+
+    <GeneCategoryDef>
+        <defName>SuperPowersPsychicEmpath</defName>
+        <label>psionist powers - empath</label>
+        <displayPriorityInXenotype>989.4</displayPriorityInXenotype>
+    </GeneCategoryDef>
+
+    <GeneCategoryDef>
+        <defName>SuperPowersPsychicDebuffer</defName>
+        <label>psionist powers - debuffer</label>
+        <displayPriorityInXenotype>989.3</displayPriorityInXenotype>
+    </GeneCategoryDef>
+
+        <!--Psionic bases-->
+    <GeneDef Name="SuperPowersPsychicDimensionalBase" Abstract="True">
+        <displayCategory>SuperPowersPsychicDimensional</displayCategory>
+        <biostatMet>-1</biostatMet>
+        <biostatCpx>1</biostatCpx>
+        <prerequisite>SHG_Archetypes_Psionist</prerequisite>
+        <marketValueFactor>1.1</marketValueFactor>
+    </GeneDef>
+
+    <GeneDef Name="SuperPowersPsychicCommanderBase" Abstract="True">
+        <displayCategory>SuperPowersPsychicCommander</displayCategory>
+        <biostatMet>-1</biostatMet>
+        <biostatCpx>1</biostatCpx>
+        <prerequisite>SHG_Archetypes_Psionist</prerequisite>
+        <marketValueFactor>1.1</marketValueFactor>
+    </GeneDef>
+
+    <GeneDef Name="SuperPowersPsychicGuardianBase" Abstract="True">
+        <displayCategory>SuperPowersPsychicGuardian</displayCategory>
+        <biostatMet>-1</biostatMet>
+        <biostatCpx>1</biostatCpx>
+        <prerequisite>SHG_Archetypes_Psionist</prerequisite>
+        <marketValueFactor>1.1</marketValueFactor>
+    </GeneDef>
+
+    <GeneDef Name="SuperPowersPsychicTyrantBase" Abstract="True">
+        <displayCategory>SuperPowersPsychicTyrant</displayCategory>
+        <biostatMet>-1</biostatMet>
+        <biostatCpx>1</biostatCpx>
+        <prerequisite>SHG_Archetypes_Psionist</prerequisite>
+        <marketValueFactor>1.1</marketValueFactor>
+    </GeneDef>
+
+    <GeneDef Name="SuperPowersPsychicSoldierBase" Abstract="True">
+        <displayCategory>SuperPowersPsychicSoldier</displayCategory>
+        <biostatMet>-1</biostatMet>
+        <biostatCpx>1</biostatCpx>
+        <prerequisite>SHG_Archetypes_Psionist</prerequisite>
+        <marketValueFactor>1.1</marketValueFactor>
+    </GeneDef>
+
+    <GeneDef Name="SuperPowersPsychicEmpathBase" Abstract="True">
+        <displayCategory>SuperPowersPsychicEmpath</displayCategory>
+        <biostatMet>-1</biostatMet>
+        <biostatCpx>1</biostatCpx>
+        <prerequisite>SHG_Archetypes_Psionist</prerequisite>
+        <marketValueFactor>1.1</marketValueFactor>
+    </GeneDef>
+
+    <GeneDef Name="SuperPowersPsychicDebufferBase" Abstract="True">
+        <displayCategory>SuperPowersPsychicDebuffer</displayCategory>
+        <biostatMet>-1</biostatMet>
+        <biostatCpx>1</biostatCpx>
+        <prerequisite>SHG_Archetypes_Psionist</prerequisite>
+        <marketValueFactor>1.1</marketValueFactor>
+    </GeneDef> 
+
+</Defs>

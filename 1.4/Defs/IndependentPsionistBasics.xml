@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef Abstract="true" Name="SuperPowersBlastBase">
+        <thingClass>Projectile_Explosive</thingClass>
+        <category>Projectile</category>
+        <tickerType>Normal</tickerType>
+        <altitudeLayer>Projectile</altitudeLayer>
+        <useHitPoints>False</useHitPoints>
+        <neverMultiSelect>True</neverMultiSelect>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.85</drawSize>
+        </graphicData>
+        <projectile>
+            <explosionRadius>1</explosionRadius>
+            <speed>50</speed>
+            <damageAmountBase>10</damageAmountBase>
+            <arcHeightFactor>0.4</arcHeightFactor>
+            <armorPenetrationBase>0.8</armorPenetrationBase>
+            <stoppingPower>1</stoppingPower>
+            <shadowSize>0</shadowSize>
+            <ai_IsIncendiary>true</ai_IsIncendiary>
+        </projectile>
+    </ThingDef>
+    
+    <ThingDef ParentName="MoteBase" Name="SHG_GenericMoteBase">
+        <defName>SHG_Mote_Generic</defName>
+        <thingClass>MoteDualAttached</thingClass>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <drawOffscreen>true</drawOffscreen>
+        <mote>
+            <fadeInTime>0.1</fadeInTime>
+            <fadeOutTime>0.1</fadeOutTime>
+            <solidTime>999999</solidTime>
+            <needsMaintenance>True</needsMaintenance>
+            <rotateTowardsTarget>True</rotateTowardsTarget>
+            <scaleToConnectTargets>True</scaleToConnectTargets>
+        </mote>
+        <graphicData>
+            <shaderType>MoteGlow</shaderType>
+            <texPath>Things/Mote/GraserBeam</texPath>
+            <color>(0.65, 0.52, 0.48, 1.0)</color>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef ParentName="SHG_GenericMoteBase">
+        <defName>SHG_Mote_Psionic</defName>
+        <graphicData>
+            <color>(0.8, 0.2, 0.8, 1.0)</color>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef ParentName="EtherealThingBase" Name="SHG_ShieldBase" Abstract="True">
+        <thingClass>ThingWithComps</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <drawOffscreen>true</drawOffscreen>
+        <graphicData>
+            <color>(180, 231, 237)</color>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>OtherSHG/Ripple</texPath> <!--Use OtherSHG/Line to create a blinking circle-->
+            <shaderType>SHG_Shield</shaderType>
+            <shaderParameters>
+                <_PulseInterval>0.5</_PulseInterval>
+                <_DistortionScale>0.5</_DistortionScale>
+                <_DistortionIntensity>0.15</_DistortionIntensity>
+                <_MinAlpha>0.1</_MinAlpha>
+                <_MaxAlpha>0.3</_MaxAlpha>
+                <_DistortionTex>/Things/Mote/SmokeTiled</_DistortionTex>
+            </shaderParameters>
+        </graphicData>
+    </ThingDef>
+
+    <ShaderTypeDef>
+        <defName>SHG_Shield</defName>
+        <shaderPath>Map/BulletShieldPsychic</shaderPath> <!--I don't know what this means or why it works, but it works-->
+    </ShaderTypeDef>    
+
+        <!--Psionic Things-->
+    <ThingDef ParentName="SHG_ShieldBase">
+        <defName>SHG_Psionist_PsionicShield</defName>
+        <label>psionic shield</label>
+        <graphicData>
+            <drawSize>3</drawSize>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_ProjectileInterceptor">
+                <radius>1</radius>
+                <interceptGroundProjectiles>true</interceptGroundProjectiles>
+                <interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
+                <interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+                <interceptAirProjectiles>true</interceptAirProjectiles>
+                <color>(0.8, 0.2, 0.8)</color>
+                <minAlpha>0.2</minAlpha>
+                <interceptEffect>Interceptor_BlockedProjectile</interceptEffect>
+            </li>
+            <li Class="CompProperties_DestroyAfterDelay">
+                <delayTicks>2500</delayTicks>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="SHG_ShieldBase">
+        <defName>SHG_Psionist_MassProtection</defName>
+        <label>large psionic forcefield</label>
+        <graphicData>
+            <drawSize>9.9</drawSize>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_ProjectileInterceptor">
+                <radius>12</radius>
+                <interceptGroundProjectiles>true</interceptGroundProjectiles>
+                <interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
+                <interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+                <interceptAirProjectiles>true</interceptAirProjectiles>
+                <color>(0.8, 0.2, 0.8)</color>
+                <minAlpha>0.2</minAlpha>
+                <interceptEffect>Interceptor_BlockedProjectile</interceptEffect>
+            </li>
+            <li Class="CompProperties_DestroyAfterDelay">
+                <delayTicks>10000</delayTicks>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>SHG_Psionist_Star</defName>
+        <label>star rift</label>
+        <thingClass>ThingWithComps</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <drawOffscreen>true</drawOffscreen>
+        <category>PsychicEmitter</category>
+        <altitudeLayer>MoteOverheadLow</altitudeLayer>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>OtherSHG/Circle</texPath>
+            <shaderType>MoteGlowDistorted</shaderType>
+            <color>(255, 255, 245)</color>
+            <drawSize>10</drawSize>
+            <shaderParameters>
+                <_DistortionTex>/Other/Ripples</_DistortionTex>
+                <_distortionIntensity>0.05</_distortionIntensity>
+                <_DistortionScale>0.7</_DistortionScale>
+                <_distortionScrollSpeed>(0.07, 0.07, 0.0)</_distortionScrollSpeed>
+            </shaderParameters>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>20</glowRadius>
+                <glowColor>(217,217,208,0)</glowColor>
+            </li>
+            <li Class="CompProperties_HeatPusher">
+                <compClass>CompHeatPusherPowered</compClass>
+                <heatPerSecond>1000</heatPerSecond>
+                <heatPushMaxTemperature>1000</heatPushMaxTemperature>
+            </li>
+            <li Class="CompProperties_DestroyAfterDelay">
+                <delayTicks>300000</delayTicks>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="SHG_ShieldBase">
+        <defName>SHG_Psionist_DebufferShield</defName>
+        <label>psionic shield</label>
+        <graphicData>
+            <color>(180, 231, 237)</color>
+            <drawSize>3</drawSize>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_ProjectileInterceptor">
+                <radius>1</radius>
+                <interceptGroundProjectiles>true</interceptGroundProjectiles>
+                <interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
+                <interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+                <interceptAirProjectiles>true</interceptAirProjectiles>
+                <color>(0.8, 0.2, 0.8)</color>
+                <minAlpha>0.2</minAlpha>
+                <interceptEffect>Interceptor_BlockedProjectile</interceptEffect>
+            </li>
+            <li Class="CompProperties_DestroyAfterDelay">
+                <delayTicks>10000</delayTicks>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <StatDef>
+        <defName>SHG_Debuffer_Range</defName>
+        <category>BasicsPawn</category>
+        <showIfUndefined>false</showIfUndefined>
+        <displayPriorityInCategory>3451</displayPriorityInCategory>
+        <alwaysHide>true</alwaysHide>
+        <label>debuffer aura range</label>
+        <description>The range stat for all debuffer auras, with the exception of Siphon which uses a static 15.</description>
+        <defaultBaseValue>15</defaultBaseValue>
+    </StatDef>
+
+    <JobDef>
+        <defName>SHG_Psionist_CompelledDuel</defName>
+        <driverClass>JobDriver_GotoMindControlled</driverClass>
+        <reportString>duelling.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+        <waitAfterArriving>10</waitAfterArriving>
+        <casualInterruptible>false</casualInterruptible>
+        <playerInterruptible>false</playerInterruptible>
+        <suspendable>false</suspendable>
+    </JobDef>
+
+    <InteractionDef>
+        <defName>SHG_Psionist_Tyrant_BreakWills</defName>
+        <label>break will</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>Things/Mote/SpeechSymbols/WordOfTrust</symbol>
+        <logRulesInitiator>
+        <rulesStrings>
+            <li>r_logentry->[INITIATOR_nameDef] psychically broke [RECIPIENT_nameDef]'s will.</li>
+        </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+
+    <InteractionDef>
+        <defName>SHG_Psionist_EmpathOpinionManipulation</defName>
+        <label>empath manipulation</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>Psionist/Empath/Gene_Psionist_DropTheirGuard</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[RECIPIENT_nameDef]'s perception of [INITIATOR_nameDef] has been psychically improved for a time.</li>
+            </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+
+    <AbilityCategoryDef>
+        <defName>SuperPowers</defName>
+        <displayOrder>2000</displayOrder>
+    </AbilityCategoryDef>
+
+    <AbilityDef Abstract="True" Name="SHGPowerAbilitiesBase">
+        <jobDef>CastAbilityOnThingWithoutWeaponInterruptible</jobDef>
+        <aiCanUse>True</aiCanUse>
+        <cooldownTicksRange>100</cooldownTicksRange>
+        <category>SuperPowers</category>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>1</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+    <AbilityDef Abstract="True" Name="SHGPsionicBase" ParentName="SHGPowerAbilitiesBase">
+        <abilityClass>Psycast</abilityClass>
+        <statBases>
+            <Ability_Duration>0</Ability_Duration>
+            <Ability_PsyfocusCost>0.0</Ability_PsyfocusCost>
+        </statBases>
+        <warmupSound>PsycastCastLoop</warmupSound>
+        <verbProperties>
+            <verbClass>Verb_CastPsycast</verbClass>
+            <requireLineOfSight>True</requireLineOfSight>
+            <targetParams>
+                <canTargetBuildings>False</canTargetBuildings>
+                <canTargetAnimals>True</canTargetAnimals>
+                <thingCategory>Item</thingCategory>
+                <mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+</Defs>
