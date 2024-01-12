@@ -356,7 +356,7 @@
         </stages>
         <comps>
             <li Class="EBSGFramework.HediffCompProperties_SeverityByNearbyPawns">
-                <onlyPlayer>True</onlyPlayer>
+                <onlySameFaction>True</onlySameFaction>
                 <onlyHumanlikes>True</onlyHumanlikes>
                 <includeSelf>False</includeSelf>
                 <range>30</range>
