@@ -35,8 +35,31 @@
 	</HediffDef>
 
     <HediffDef>
-        <defName>SHG_Psionist_PsionicFlight</defName>
+        <defName>SHG_Psionist_New_PsionicFlight</defName>
 		<label>psionic flight</label>
+		<description>This super is always floating just a little bit off the ground, and their ability to move omnidirectionally makes it easier for them to move around quickly. The more psychic sensitivity the soldier has, the more they can propel themselves.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+        <stages>
+            <li>
+                <statFactors>
+                    <MoveSpeed>1.25</MoveSpeed>
+                </statFactors>
+                <statFactorEffectMultiplier>PsychicSensitivity</statFactorEffectMultiplier>
+            </li>
+        </stages>
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TerrainCostOverride">
+                <universalCostOverride>0</universalCostOverride>
+            </li>
+		</comps>
+	</HediffDef>
+
+    <HediffDef>
+        <defName>SHG_Psionist_PsionicFlight</defName>
+		<label>old psionic flight</label>
 		<description>This super is always floating just a little bit off the ground, and their ability to move omnidirectionally makes it easier for them to move around quickly. The more psychic sensitivity the soldier has, the more they can propel themselves.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>

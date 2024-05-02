@@ -69,7 +69,6 @@
             </li>
             <li Class="HediffCompProperties_GiveHediffsInRange">
                 <range>10</range>
-                <mote>Mote_SparkThrown</mote>
                 <hideMoteWhenNotDrafted>false</hideMoteWhenNotDrafted>
                 <targetingParameters>
                     <canTargetBuildings>false</canTargetBuildings>
@@ -112,7 +111,7 @@
 		<maxSeverity>1.0</maxSeverity>
 		<isBad>false</isBad>
 		<comps>
-            <li Class="EBSGFramework.HediffCompProperties_TerrainCostOverride">
+			<li Class="EBSGFramework.HediffCompProperties_TerrainCostOverride">
                 <universalCostOverride>0</universalCostOverride>
             </li>
             <li Class="HediffCompProperties_Disappears">
@@ -120,7 +119,6 @@
             </li>
             <li Class="HediffCompProperties_GiveHediffsInRange">
                 <range>20</range>
-                <mote>Mote_SparkThrown</mote>
                 <hideMoteWhenNotDrafted>false</hideMoteWhenNotDrafted>
                 <targetingParameters>
                     <canTargetBuildings>false</canTargetBuildings>
@@ -142,7 +140,7 @@
 		<maxSeverity>1.0</maxSeverity>
 		<isBad>false</isBad>
 		<comps>
-            <li Class="EBSGFramework.HediffCompProperties_TerrainCostOverride">
+			<li Class="EBSGFramework.HediffCompProperties_TerrainCostOverride">
                 <universalCostOverride>0</universalCostOverride>
             </li>
             <li Class="HediffCompProperties_Disappears">
