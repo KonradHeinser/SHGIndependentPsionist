@@ -3,7 +3,7 @@
     <HediffDef>
         <defName>SHG_Psionist_PsionicManipulator</defName>
         <label>psionic manipulator</label>
-        <description>This Empath is multiplying their social impact by 1.5 * psychic sensitivity.</description>
+        <description>This Empath is increasing their social impact.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <isBad>false</isBad>
         <stages>
@@ -20,7 +20,7 @@
     <HediffDef>
         <defName>SHG_Psionist_PsionicTerrorizer</defName>
         <label>psionic terrorizer</label>
-        <description>This Empath is multiplying their arrest success chance and supression (if ideology is enabled) by 1.5 * psychic sensitivity.</description>
+        <description>This Empath is increasing their arrest success chance and supression (if ideology is enabled).</description>
         <hediffClass>HediffWithComps</hediffClass>
         <isBad>false</isBad>
         <stages>
@@ -38,7 +38,7 @@
     <HediffDef>
         <defName>SHG_Psionist_PsionicInfluencer</defName>
         <label>psionic influencer</label>
-        <description>This Empath is multiplying their negotiation power by 1.5 * psychic sensitivity.</description>
+        <description>This Empath is increasing their negotiation power.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <isBad>false</isBad>
         <stages>
@@ -55,7 +55,7 @@
     <HediffDef MayRequire="Ludeon.Rimworld.Ideology">
         <defName>SHG_Psionist_PsionicMissionary</defName>
         <label>psionic missionary</label>
-        <description>This Empath is multiplying their religion spread frequency and conversion power by 1.5 * psychic sensitivity.</description>
+        <description>This Empath is increasing their religion spread frequency and conversion power.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <isBad>false</isBad>
         <stages>
@@ -148,7 +148,7 @@
         <label>beloved leader</label>
         <description>Psychically-induced attachment to a Unifier.</description>
         <hediffClass>EBSGFramework.Hediff_LoveTheCaster</hediffClass>
-        <targetPrefix>for</targetPrefix>
+        <targetPrefix>is</targetPrefix>
         <isBad>false</isBad>
         <stages><li></li></stages>
     </HediffDef>

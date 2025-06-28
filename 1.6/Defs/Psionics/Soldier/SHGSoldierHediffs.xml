@@ -35,32 +35,9 @@
 	</HediffDef>
 
     <HediffDef>
-        <defName>SHG_Psionist_New_PsionicFlight</defName>
-		<label>psionic flight</label>
-		<description>This super is always floating just a little bit off the ground, and their ability to move omnidirectionally makes it easier for them to move around quickly. The more psychic sensitivity the soldier has, the more they can propel themselves.</description>
-		<hediffClass>HediffWithComps</hediffClass>
-		<scenarioCanAdd>false</scenarioCanAdd>
-		<maxSeverity>1.0</maxSeverity>
-		<isBad>false</isBad>
-        <stages>
-            <li>
-                <statFactors>
-                    <MoveSpeed>1.25</MoveSpeed>
-                </statFactors>
-                <statFactorEffectMultiplier>PsychicSensitivity</statFactorEffectMultiplier>
-            </li>
-        </stages>
-		<comps>
-			<li Class="EBSGFramework.HediffCompProperties_TerrainCostOverride">
-                <universalCostOverride>0</universalCostOverride>
-            </li>
-		</comps>
-	</HediffDef>
-
-    <HediffDef>
         <defName>SHG_Psionist_PsionicFlight</defName>
-		<label>old psionic flight</label>
-		<description>This super is always floating just a little bit off the ground, and their ability to move omnidirectionally makes it easier for them to move around quickly. The more psychic sensitivity the soldier has, the more they can propel themselves.</description>
+		<label>psionic flight</label>
+		<description>This super is always floating just a little bit off the ground, and their ability to move omnidirectionally makes it easier for them to move around quickly.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
@@ -83,7 +60,7 @@
     <HediffDef>
         <defName>SHG_Psionist_PsionicInfusement</defName>
         <label>psionic infusement</label>
-        <description>This Commando infuses their melee attacks with psionic energy to make them stronger. The multiplier listed here is the base amount, and are multiplied by psychic sensitivity.</description>
+        <description>This Commando infuses their melee attacks with psionic energy to make them stronger.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <isBad>false</isBad>
         <stages>
@@ -99,7 +76,7 @@
     <HediffDef>
         <defName>SHG_Psionist_Entrench</defName>
         <label>psionic infusement</label>
-        <description>This Commando infused their body with dense psionic energy that stops their movement, but stabilizes their body and provides some protection. The offsets listed here is the base amount, and is multiplied by psychic sensitivity.</description>
+        <description>This Commando infused their body with dense psionic energy that stops their movement, but stabilizes their body and provides some protection.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <isBad>false</isBad>
         <stages>
@@ -139,7 +116,7 @@
     <HediffDef>
         <defName>SHG_Psionist_PsionicArmor</defName>
         <label>psionic armor</label>
-        <description>This Immortal is being protected by a psychic armor. The armor values listed are the base values, and are multiplied by psychic sensitivity.</description>
+        <description>This Immortal is being protected by a psychic armor.</description>
 		<stages>
 			<li>
                 <statOffsets>
@@ -155,7 +132,7 @@
     <HediffDef>
         <defName>SHG_Psionist_PsionicRegeneration</defName>
         <label>psionic regeneration</label>
-        <description>This Immortal is constanly healing themselves with psionic energy. The immunity gain listed is the base value, and is multiplied by psychic sensitivity.</description>
+        <description>This Immortal is constanly healing themselves with psionic energy.</description>
 		<hediffClass>HediffWithComps</hediffClass>
         <stages>
 			<li>
